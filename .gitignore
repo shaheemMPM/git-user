@@ -1,0 +1,15 @@
+# === Rust specific ===
+/target
+**/*.rs.bk
+
+# === Editor/IDE ===
+.idea/
+.vscode/
+*.swp
+
+# === OS & Misc ===
+.DS_Store
+Thumbs.db
+
+# === Other ===
+/TODO.md
