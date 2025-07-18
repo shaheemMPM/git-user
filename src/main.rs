@@ -3,12 +3,21 @@ mod git;
 mod ui;
 mod types;
 
+use clap::Parser;
 use config::{get_config_path, load_profiles, save_profiles};
 use git::{is_git_repo, get_current_git_user, set_git_user};
 use ui::{select_profile, prompt_new_profile};
 use types::ProfileSelection;
 
+#[derive(Parser)]
+#[command(name = "git-user")]
+#[command(version)]
+#[command(about = "A no-nonsense CLI to switch and manage Git user profiles on a per-repo basis", long_about = None)]
+struct Cli {}
+
 fn main() {
+    let _ = Cli::parse(); // this will auto-handle --help and --version
+
     if !is_git_repo() {
         eprintln!(" ❌ Not a Git repository. Please run this command from the root of a Git project.");
         std::process::exit(1);
@@ -42,4 +51,4 @@ fn main() {
             std::process::exit(0);
         }
     }
-} 
+}
