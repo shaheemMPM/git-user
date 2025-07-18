@@ -10,3 +10,9 @@ pub struct GitProfile {
 pub struct GitConfig {
     pub profiles: Vec<GitProfile>,
 }
+
+pub enum ProfileSelection {
+    Selected(GitProfile),
+    AddNew,
+    Cancelled,
+}
