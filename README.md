@@ -34,3 +34,11 @@ git-user
 
 This project was inspired by [git-user-switch](https://www.npmjs.com/package/git-user-switch) — a great NPM-based CLI tool for switching Git profiles.
 git-user is a Rust-based reimplementation with a focus on speed, portability, and no Node.js dependency.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Support
+
+If you found this project useful, you can [buy me a coffee ☕](https://www.buymeacoffee.com/shaheem) to keep me caffeinated while building more Rust tools :)
