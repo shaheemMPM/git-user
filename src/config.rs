@@ -1,7 +1,7 @@
-use crate::types::{GitProfile, GitConfig};
+use crate::types::{GitConfig, GitProfile};
 use dirs::config_dir;
-use std::{path::PathBuf};
 use std::fs::{create_dir_all, read_to_string, write};
+use std::path::PathBuf;
 use toml::{from_str, to_string};
 
 pub fn get_config_path() -> PathBuf {
@@ -14,12 +14,10 @@ pub fn get_config_path() -> PathBuf {
 
 pub fn load_profiles(path: &PathBuf) -> Vec<GitProfile> {
     match read_to_string(path) {
-        Ok(content) => {
-            match from_str::<GitConfig>(&content) {
-                Ok(config) => config.profiles,
-                Err(_) => Vec::new(),
-            }
-        }
+        Ok(content) => match from_str::<GitConfig>(&content) {
+            Ok(config) => config.profiles,
+            Err(_) => Vec::new(),
+        },
         Err(_) => Vec::new(),
     }
 }

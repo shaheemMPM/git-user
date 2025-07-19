@@ -23,9 +23,9 @@ fn run_git_config(key: &str) -> String {
             .expect("Git not installed")
             .stdout,
     )
-        .unwrap_or_default()
-        .trim()
-        .to_string()
+    .unwrap_or_default()
+    .trim()
+    .to_string()
 }
 
 pub fn set_git_user(profile: &GitProfile) {
